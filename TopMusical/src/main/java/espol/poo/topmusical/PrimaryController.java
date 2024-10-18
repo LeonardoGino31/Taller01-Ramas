@@ -31,7 +31,11 @@ public class PrimaryController {
 
     public void initialize() {
         listaCanciones = Cancion.leerCanciones();
+
         Collections.sort(listaCanciones, Collections.reverseOrder());
+
+       // Collections.sort(listaCanciones);
+
         for (Cancion c : listaCanciones ) {
 
             HBox hb = new HBox(10);//hbox para ubicar info de cada cancion
@@ -46,7 +50,11 @@ public class PrimaryController {
                 ex.printStackTrace();
             }
             Label lbT = new Label(c.getTitulo() + " \n" + c.getCantante());//titulo y cantante
-            lbT.setStyle("-fx-font-weight: bold;-fx-font-size: 22;"); // cambio de tamaño letra 
+
+           // lbT.setStyle("-fx-font-weight: bold;-fx-font-size: 22;"); // cambio de tamaño letra 
+
+            lbT.setStyle("-fx-font-weight: bold;-fx-font-size: 14;");
+
 
             hb.getChildren().addAll(lbp, iv, lbT);//agregar al hbox
 
